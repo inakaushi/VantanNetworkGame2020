@@ -1,0 +1,484 @@
+fileFormatVersion: 2
+guid: b9d6277c8573b6443a3756039675cba6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4103428707185402067
+    second: Mega Toon Tilemap 02_0
+  - first:
+      213: -6709158033898391837
+    second: Mega Toon Tilemap 02_1
+  - first:
+      213: -4582798570613770347
+    second: Mega Toon Tilemap 02_2
+  - first:
+      213: 5762183893757045338
+    second: Mega Toon Tilemap 02_3
+  - first:
+      213: -6662403407618849555
+    second: Mega Toon Tilemap 02_4
+  - first:
+      213: 1727104357822138167
+    second: Mega Toon Tilemap 02_5
+  - first:
+      213: -3857465792204179127
+    second: Mega Toon Tilemap 02_6
+  - first:
+      213: -2577324092009793063
+    second: Mega Toon Tilemap 02_7
+  - first:
+      213: -8081764041992581598
+    second: Mega Toon Tilemap 02_8
+  - first:
+      213: -3091372882949986385
+    second: Mega Toon Tilemap 02_9
+  - first:
+      213: -8780711993403103912
+    second: Mega Toon Tilemap 02_10
+  - first:
+      213: -3919275891986684876
+    second: Mega Toon Tilemap 02_11
+  - first:
+      213: 4259229208362016810
+    second: Mega Toon Tilemap 02_12
+  - first:
+      213: -8727602277323463145
+    second: Mega Toon Tilemap 02_13
+  - first:
+      213: 1532568256809241069
+    second: Mega Toon Tilemap 02_14
+  - first:
+      213: -8770278623413976474
+    second: Mega Toon Tilemap 02_15
+  - first:
+      213: -8508921086100792574
+    second: Mega Toon Tilemap 02_16
+  - first:
+      213: 5553144199587039280
+    second: Mega Toon Tilemap 02_17
+  - first:
+      213: -7414340061466841917
+    second: Mega Toon Tilemap 02_18
+  - first:
+      213: -4641513836411359114
+    second: Mega Toon Tilemap 02_19
+  - first:
+      213: 1942049489588456
+    second: Mega Toon Tilemap 02_20
+  - first:
+      213: 636377046237646291
+    second: Mega Toon Tilemap 02_21
+  - first:
+      213: -1059389674131317746
+    second: Mega Toon Tilemap 02_22
+  - first:
+      213: -4511613069979750950
+    second: Mega Toon Tilemap 02_23
+  - first:
+      213: 4778741080690059889
+    second: Mega Toon Tilemap 02_24
+  - first:
+      213: -6373950191609091735
+    second: Mega Toon Tilemap 02_25
+  - first:
+      213: 986761493886834419
+    second: Mega Toon Tilemap 02_26
+  - first:
+      213: 1827647859410684681
+    second: Mega Toon Tilemap 02_27
+  - first:
+      213: -1078735462299422561
+    second: Mega Toon Tilemap 02_28
+  - first:
+      213: -3475099455891772725
+    second: Mega Toon Tilemap 02_29
+  - first:
+      213: -6249644797345606000
+    second: Mega Toon Tilemap 02_30
+  - first:
+      213: -2881827969439572246
+    second: Mega Toon Tilemap 02_31
+  - first:
+      213: -2376353324596527710
+    second: Mega Toon Tilemap 02_32
+  - first:
+      213: -1104603372877410048
+    second: Mega Toon Tilemap 02_33
+  - first:
+      213: 8442890688909096969
+    second: Mega Toon Tilemap 02_34
+  - first:
+      213: 6935843570996682470
+    second: Mega Toon Tilemap 02_35
+  - first:
+      213: 4690254899693002804
+    second: Mega Toon Tilemap 02_36
+  - first:
+      213: 2892297676620109336
+    second: Mega Toon Tilemap 02_37
+  - first:
+      213: 8835807356707829889
+    second: Mega Toon Tilemap 02_38
+  - first:
+      213: -5513567022947444334
+    second: Mega Toon Tilemap 02_39
+  - first:
+      213: 5347610897697627945
+    second: Mega Toon Tilemap 02_40
+  - first:
+      213: -8947408092571948216
+    second: Mega Toon Tilemap 02_41
+  - first:
+      213: 4099905355883909448
+    second: Mega Toon Tilemap 02_42
+  - first:
+      213: -306178672557144544
+    second: Mega Toon Tilemap 02_43
+  - first:
+      213: -7561798355061999162
+    second: Mega Toon Tilemap 02_44
+  - first:
+      213: -7416050330590247454
+    second: Mega Toon Tilemap 02_45
+  - first:
+      213: 4973124603880637733
+    second: Mega Toon Tilemap 02_46
+  - first:
+      213: 524515574660623620
+    second: Mega Toon Tilemap 02_47
+  - first:
+      213: 5252428284044494825
+    second: Mega Toon Tilemap 02_48
+  - first:
+      213: -4116759677552808654
+    second: Mega Toon Tilemap 02_49
+  - first:
+      213: 3522763547547247242
+    second: Mega Toon Tilemap 02_50
+  - first:
+      213: -29762025311232280
+    second: Mega Toon Tilemap 02_51
+  - first:
+      213: 1876405024990185115
+    second: Mega Toon Tilemap 02_52
+  - first:
+      213: 254955603378494402
+    second: Mega Toon Tilemap 02_53
+  - first:
+      213: -2480026433293849878
+    second: Mega Toon Tilemap 02_54
+  - first:
+      213: 4135362964685086683
+    second: Mega Toon Tilemap 02_55
+  - first:
+      213: -2494673973274072952
+    second: Mega Toon Tilemap 02_56
+  - first:
+      213: -8674234590541059065
+    second: Mega Toon Tilemap 02_57
+  - first:
+      213: 1754617875656830404
+    second: Mega Toon Tilemap 02_58
+  - first:
+      213: 6130535979309744387
+    second: Mega Toon Tilemap 02_59
+  - first:
+      213: -6477532567166142431
+    second: Mega Toon Tilemap 02_60
+  - first:
+      213: -1930635916539535931
+    second: Mega Toon Tilemap 02_61
+  - first:
+      213: -8436244217293506316
+    second: Mega Toon Tilemap 02_62
+  - first:
+      213: -6039451460451438797
+    second: Mega Toon Tilemap 02_63
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mega Toon Tilemap 02_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 342
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2fd21be451bd07c0800000000000000
+      internalID: -4103428707185402067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mega Toon Tilemap 02_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 342
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e63787905844e2a0800000000000000
+      internalID: -6709158033898391837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mega Toon Tilemap 02_2
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 342
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597f5611bf0a660c0800000000000000
+      internalID: -4582798570613770347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mega Toon Tilemap 02_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 172
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5aadd5d8b367ff40800000000000000
+      internalID: 5762183893757045338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mega Toon Tilemap 02_4
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 172
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4c68256636a83a0800000000000000
+      internalID: -6662403407618849555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mega Toon Tilemap 02_5
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 172
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737840a4348e7f710800000000000000
+      internalID: 1727104357822138167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mega Toon Tilemap 02_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949f27abc47877ac0800000000000000
+      internalID: -3857465792204179127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mega Toon Tilemap 02_7
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 2
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d933b0c4618b3cd0800000000000000
+      internalID: -2577324092009793063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mega Toon Tilemap 02_8
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 2
+        width: 170
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ec18e3c6ec7df80800000000000000
+      internalID: -8081764041992581598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ad3ae804980e3934b8391b0734c0337d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 1
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
