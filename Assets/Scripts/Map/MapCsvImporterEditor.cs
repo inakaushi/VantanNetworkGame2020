@@ -32,7 +32,7 @@ public class MapCsvImporterEditor : Editor
 		string csvText = csvImporter.csvFile.text;
 
 		// 行数をIDとしてファイルを作成
-		string fileName = "floorData.asset";
+		string fileName = $"{csvImporter.csvFile.name}.asset";
 		string path = "Assets/Resources/Mapdata/" + fileName;
 
 		// Dataのインスタンスをメモリ上に作成
@@ -43,7 +43,6 @@ public class MapCsvImporterEditor : Editor
 		// 改行ごとにパース
 		string[] afterParse = csvText.Split('\n');
 
-		// ヘッダー行を除いてインポート
 		for (int i = 0; i < afterParse.Length; i++)
 		{
 			string[] parseByComma = afterParse[i].Split(',');

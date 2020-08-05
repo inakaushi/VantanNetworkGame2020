@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class MapManager : SingletonMonoBehaviour<MapManager>
 {
-    //マップデータが存在するパス
-    private const string MAP_DATA_PATH = "MapData/floorData";
-
-    public MapData FloorData { set; get; }
+    [SerializeField]
+    private MapData floorData;
+    public MapData FloorData { get { return floorData; } }
 
     //座標とタイルの種類のディクショナリ
     private Dictionary<(int x, int z), FloorType> m_floorTypeDic = new Dictionary<(int x, int z) , FloorType>();
@@ -20,13 +19,18 @@ public class MapManager : SingletonMonoBehaviour<MapManager>
     //マップ生成が終わったかどうか
     public bool MapCreated { get; set; } = false;
 
+    //プレイヤーのプレハブ
+    [SerializeField] GameObject m_playerPrefab;
+
     //プレイヤーのインスタンス
-    [SerializeField] GameObject[] m_players;
+    public GameObject Player { get; set; }
+
+    [SerializeField] CameraController m_playerCamera;
 
     public enum FloorType
     {
-        None = -1,
-        Floor = 1,
+        None = 0,
+        Floor,
         Wall,
         Water,
         Start,
@@ -35,9 +39,6 @@ public class MapManager : SingletonMonoBehaviour<MapManager>
 
     protected override void Awake()
     {
-        //スクリプタブルオブジェクトからマップデータを読み込んで初期化
-        FloorData = Resources.Load<MapData>(MAP_DATA_PATH);
-
         for (int i = 0; i < FloorData.mapArray2D.Height; i++)
         {
             for (int j = 0; j < FloorData.mapArray2D.Width; j++)
@@ -58,20 +59,16 @@ public class MapManager : SingletonMonoBehaviour<MapManager>
             return;
         }
 
-        int index = 0;
         foreach (var pos in StartPositionList)
         {
-            Instantiate(m_players[index], MapCreate.CreatePosition + new Vector3(pos.x, 0, -pos.z), Quaternion.identity);
-            PlayerMoveController pmc = m_players[index].GetComponent<PlayerMoveController>();
+            Player = Instantiate(m_playerPrefab, MapCreate.CreatePosition + new Vector3(pos.x, 0, -pos.z), Quaternion.identity);
+            PlayerMoveController pmc = Player.GetComponent<PlayerMoveController>();
             pmc.SetPos((int)pos.x, (int)pos.z);
 
-            index++;
-            if (index >= m_players.Length)
-            {
-                break;
-            }
+            break;
         }
-        
+
+        m_playerCamera.enabled = true;
     }
 
     public FloorType GetFloorType(int x, int z)

@@ -9022,6 +9022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
+  floorData: {fileID: 11400000, guid: cd7e7de7415b80840983c82c9656ff9d, type: 2}
   m_players:
   - {fileID: 8958734412652966045, guid: afcb114905a0a0248adf61da7c9a2c7d, type: 3}
 --- !u!1001 &1902966528
