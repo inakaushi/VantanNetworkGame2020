@@ -64,7 +64,7 @@ public class PalletManager : MonoBehaviour
         string lineText = null;
         StreamWriter sw;
         FileInfo fi;
-        fi = new FileInfo(Application.dataPath + PATH + fileName +".csv");
+        fi = new FileInfo(Application.dataPath + PATH + fileName + ".csv");
         sw = fi.AppendText();
 
         for (int i = 0; i < FieldPosition.Length; i++)
