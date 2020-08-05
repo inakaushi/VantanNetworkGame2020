@@ -12,7 +12,8 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.Find("Player").transform;
+        //target = GameObject.Find("Player").transform;
+        target = MapManager.Instance.Player.transform;
 
         transform.localEulerAngles = angle;
         CameraMove(1000f);

@@ -49,6 +49,11 @@ public class FieldButton : MonoBehaviour
         }
     }
 
+    public void SetSprite(int num)
+    {
+        this.gameObject.GetComponent<Image>().sprite = Pattern[num];
+    }
+
     //オールクリアのシグナルを判断する
     void SignalCheck()
     {
