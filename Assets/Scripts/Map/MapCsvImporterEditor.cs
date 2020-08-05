@@ -52,16 +52,16 @@ public class MapCsvImporterEditor : Editor
             {
                 if (int.TryParse(parseByComma[j], out int result))
                 {
-					floorData.mapArray2D.Set(i, j, result);
+					floorData.mapArray2D.Set(j, i, result);
 					//Debug.Log(mapData.mapArray[i,j]);
 
                     if (result == 4)
                     {
-						floorData.StartPosition.Add(new Vector3(i, 0, j));
+						floorData.StartPositionList.Add(new Vector3(j, 0, i));
                     }
                     else if (result == 5)
                     {
-						floorData.GoalPosition.Add(new Vector3(i, 0, j));
+						floorData.GoalPositionList.Add(new Vector3(j, 0, i));
 					}
 				}
             }
