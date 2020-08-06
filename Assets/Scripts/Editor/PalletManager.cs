@@ -28,7 +28,11 @@ public class PalletManager : MonoBehaviour
 
     private int[] FieldPosition = new int[400];    //各ポジションのスプライトナンバー
 
-    const string PATH = "Assets/Resources/MapData/FloorDate.csv";
+    [SerializeField] string fileName = "FloorData";
+
+    const string PATH = "/Resources/MapData/";
+
+    [SerializeField] TextAsset csvFile;
 
     //オールクリアを押した処理
     public void AllClear()
@@ -55,15 +59,15 @@ public class PalletManager : MonoBehaviour
     }
 
     //フィールドデータをcsvに保存処理
-    public void CSVSeve()
+    public void CSVSave()
     {
         string lineText = null;
         StreamWriter sw;
         FileInfo fi;
-        fi = new FileInfo(Application.dataPath + "/Resources/MapData/" + "FloorDate.csv");
+        fi = new FileInfo(Application.dataPath + PATH + fileName + ".csv");
         sw = fi.AppendText();
 
-        for (int i = 0; i < 400; i++)
+        for (int i = 0; i < FieldPosition.Length; i++)
         {
             if (i % 20 == 0)
             {
@@ -83,5 +87,38 @@ public class PalletManager : MonoBehaviour
         sw.Flush();
         sw.Close();
         AssetDatabase.Refresh(ImportAssetOptions.ImportRecursive);
+    }
+
+    //csvからフィールドデータを読み込み
+    public void CSVImport()
+    {
+        string csvText = csvFile.text;
+
+        // 改行ごとにパース
+        string[] afterParse = csvText.Split('\n');
+
+        int index = 0;
+
+        for (int i = 0; i < afterParse.Length; i++)
+        {
+            string[] parseByComma = afterParse[i].Split(',');
+
+            for (int j = 0; j < parseByComma.Length; j++)
+            {
+                if (int.TryParse(parseByComma[j], out int result))
+                {
+                    FieldPosition[index] = result;
+                    index++;
+                }
+            }
+        }
+
+        FieldButton[] fieldButtons = FindObjectsOfType<FieldButton>();
+
+        foreach (var fieldButton in fieldButtons)
+        {
+            int posNum = fieldButton.PosNum;
+            fieldButton.SetSprite(FieldPosition[posNum]);
+        }
     }
 }
