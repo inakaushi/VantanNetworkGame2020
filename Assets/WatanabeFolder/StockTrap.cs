@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class StockTrap : MonoBehaviour
 {
-    public List<SelectTrapDate> selectTrapList = new List<SelectTrapDate>();
-
+    public List<SelectTrapDate> selectTrapList = new List<SelectTrapDate>(2);
+    private int i = 0;
     void Start()
     {
         
@@ -18,7 +18,15 @@ public class StockTrap : MonoBehaviour
 
     public void SetTraps(string name) 
     {
-        selectTrapList.Add(new SelectTrapDate(name));
-        Debug.Log(name + "ゲット");
+        if (!(i == 2))
+        {
+            selectTrapList.Add(new SelectTrapDate(name));
+            Debug.Log(name + "ゲット");
+            i++;
+        }
+        else
+        {
+            Debug.Log("これ以上はいりません");
+        }
     } 
 }
