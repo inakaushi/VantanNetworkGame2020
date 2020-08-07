@@ -11,17 +11,13 @@ public class PutTrap : MonoBehaviour
     GameObject m_tempYesTrap;
     GameObject m_tempNoTrap;
 
+    //仮配置トラップを格納するための変数
     GameObject go;
 
     //1フレーム前にポイントしていたタイルのポジション
     Vector3? Position = null;
 
     Ray ray;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -58,12 +54,14 @@ public class PutTrap : MonoBehaviour
                         return;
                     }
 
+                    //前フレームと違うオブジェクトを指していた場合、仮配置トラップを削除
                     if (Position != null)
                     {
                         Position = null;
                         Destroy(go);
                     }
 
+                    //タグが床、またはトラップだった場合、配置可能仮トラップ生成
                     if (hit.collider.tag == "Ground" || hit.collider.tag == "Trap")
                     {
                         if (Position == null)
@@ -73,6 +71,7 @@ public class PutTrap : MonoBehaviour
                             go = Instantiate(m_tempYesTrap, hit.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                         }
                     }
+                    //タグが配置不可能だった場合、配置不可能仮トラップ生成
                     else if (hit.collider.tag == "CantPut")
                     {
                         if (Position == null)
