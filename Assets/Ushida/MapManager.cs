@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// Photon 用の名前空間を参照する
+using ExitGames.Client.Photon;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class MapManager : SingletonMonoBehaviour<MapManager>
+public class MapManager : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private MapData floorData;
@@ -19,8 +23,8 @@ public class MapManager : SingletonMonoBehaviour<MapManager>
     //マップ生成が終わったかどうか
     public bool MapCreated { get; set; } = false;
 
-    //プレイヤーのプレハブ
-    [SerializeField] GameObject m_playerPrefab;
+    /// <summary>プレイヤーのプレハブ</summary>
+    [SerializeField] string m_playerPrefabName = "Player";
 
     //プレイヤーのインスタンス
     public GameObject Player { get; set; }
@@ -37,8 +41,51 @@ public class MapManager : SingletonMonoBehaviour<MapManager>
         Goal,
     }
 
-    protected override void Awake()
+    //シングルトン用処理--------------------------------------------------------------------------------
+    [SerializeField]
+    private bool dontDestroyOnLoad = false;
+    private static MapManager instance;
+    public static MapManager Instance
     {
+        get
+        {
+            if (instance == null)
+            {
+                instance = (MapManager)FindObjectOfType(typeof(MapManager));
+                if (instance == null)
+                {
+                    Debug.LogError(typeof(MapManager) + " をアタッチしているGameObjectはありません");
+                }
+            }
+
+            return instance;
+        }
+    }
+    //---------------------------------------------------------------------------------------------------
+
+    private void Awake()
+    {
+        //シングルトン用処理----------------------------------------------------------------------
+        // 他のGameObjectにアタッチされているか調べる.
+        // アタッチされている場合は破棄する.
+        if (this != Instance)
+        {
+            Destroy(this);
+            //Destroy(this.gameObject);
+            Debug.LogWarning(
+                typeof(MapManager) +
+                " は既に他のGameObjectにアタッチされているため、コンポーネントを破棄しました." +
+                " アタッチされているGameObjectは " + Instance.gameObject.name + " です.");
+            return;
+        }
+
+        if (dontDestroyOnLoad)
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+        //-----------------------------------------------------------------------------------------
+
+        //マップデータを読み込む---------------------------------------------
         for (int i = 0; i < FloorData.mapArray2D.Height; i++)
         {
             for (int j = 0; j < FloorData.mapArray2D.Width; j++)
@@ -52,21 +99,12 @@ public class MapManager : SingletonMonoBehaviour<MapManager>
         GoalPositionList = FloorData.GoalPositionList;
     }
 
-    public void CreatePlayer()
+    public void CreatePlayer(int index)
     {
-        if (!MapCreated)
-        {
-            return;
-        }
-
-        foreach (var pos in StartPositionList)
-        {
-            Player = Instantiate(m_playerPrefab, MapCreate.CreatePosition + new Vector3(pos.x, 0, -pos.z), Quaternion.identity);
-            PlayerMoveController pmc = Player.GetComponent<PlayerMoveController>();
-            pmc.SetPos((int)pos.x, (int)pos.z);
-
-            break;
-        }
+        Vector3 spawnPos = MapCreate.CreatePosition + new Vector3(StartPositionList[index].x, 0, -StartPositionList[index].z);
+        Player = PhotonNetwork.Instantiate(m_playerPrefabName, spawnPos, Quaternion.identity);
+        PlayerMoveController pmc = Player.GetComponent<PlayerMoveController>();
+        pmc.SetPos((int)StartPositionList[index].x, (int)StartPositionList[index].z);
 
         m_playerCamera.enabled = true;
     }
