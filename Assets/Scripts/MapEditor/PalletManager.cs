@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -28,7 +29,7 @@ public class PalletManager : MonoBehaviour
 
     private int[] FieldPosition = new int[400];    //各ポジションのスプライトナンバー
 
-    [SerializeField] string fileName = "FloorData";
+    [SerializeField] string fileName = "floorData";
 
     const string PATH = "/Resources/MapData/";
 
@@ -92,6 +93,11 @@ public class PalletManager : MonoBehaviour
     //csvからフィールドデータを読み込み
     public void CSVImport()
     {
+        if (!csvFile)
+        {
+            return;
+        }
+
         string csvText = csvFile.text;
 
         // 改行ごとにパース
@@ -122,3 +128,5 @@ public class PalletManager : MonoBehaviour
         }
     }
 }
+
+#endif
