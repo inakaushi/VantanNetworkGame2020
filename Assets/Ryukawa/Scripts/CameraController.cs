@@ -12,11 +12,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        //target = GameObject.Find("Player").transform;
-        target = MapManager.Instance.Player.transform;
-
         transform.localEulerAngles = angle;
-        CameraMove(1000f);
     }
 
 	void LateUpdate()
@@ -26,7 +22,15 @@ public class CameraController : MonoBehaviour
 
     void CameraMove(float dt)
 	{
-        var pos = target.transform.position + offsetPos;
-        transform.localPosition = Vector3.Lerp(transform.localPosition, pos, speed * dt);
+		if (target)
+		{
+			var pos = target.transform.position + offsetPos;
+			transform.localPosition = Vector3.Lerp(transform.localPosition, pos, speed * dt);
+		}
+	}
+
+    public void SetTarget(Transform target)
+	{
+        this.target = target;
 	}
 }
