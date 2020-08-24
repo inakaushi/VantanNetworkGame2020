@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
+// Photon 用の名前空間を参照する
+using ExitGames.Client.Photon;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class PlayerMoveController : MonoBehaviour
+public class PlayerMoveController : MonoBehaviourPunCallbacks
 {
     [SerializeField] float m_timePerTile;
 
@@ -16,8 +20,20 @@ public class PlayerMoveController : MonoBehaviour
     //次に移動するマスのタイプ
     MapManager.FloorType m_nextFloorType = MapManager.FloorType.None;
 
+    PhotonView m_view;
+
+    private void Start()
+    {
+        m_view = GetComponent<PhotonView>();
+    }
+
     private void Update()
     {
+        if (!m_view.IsMine)
+        {
+            return;
+        }
+
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 

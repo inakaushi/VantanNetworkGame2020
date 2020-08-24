@@ -51721,8 +51721,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f534b442da9a243b35650ec6683510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: FloorData2
-  csvFile: {fileID: 4900000, guid: 44a473a608e8ee74680ce426aff292c5, type: 3}
+  fileName: LobbyFloorData
+  csvFile: {fileID: 0}
 --- !u!4 &2048422050
 Transform:
   m_ObjectHideFlags: 0

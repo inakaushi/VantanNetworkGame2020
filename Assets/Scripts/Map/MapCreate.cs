@@ -55,6 +55,10 @@ public class MapCreate : MonoBehaviour
         yield return null;
 
         MapManager.Instance.MapCreated = true;
-        MapManager.Instance.CreatePlayer();
+
+        if (NetworkGameManager.Instance.enabled == false)
+        {
+            NetworkGameManager.Instance.enabled = true;
+        }
     }
 }
