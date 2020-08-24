@@ -88,6 +88,11 @@ public class PutTrap : MonoBehaviour
 
     public void SetTrap(string trap)
     {
+        if (PhaseManager.instance.GetPhase() != PhaseManager.PHASE.SET_TRAP)
+        {
+            return;
+        }
+
         m_trap = Resources.Load(trap) as GameObject;
         m_tempYesTrap = Resources.Load(trap + "TempYes") as GameObject;
         m_tempNoTrap = Resources.Load(trap + "TempNo") as GameObject;
@@ -103,4 +108,9 @@ public class PutTrap : MonoBehaviour
 
         m_trapText.text = "Trap : Nothing";
     }
+
+    public void EndSetTrap()
+	{
+        PhaseManager.instance.EndSetTrap();
+	}
 }

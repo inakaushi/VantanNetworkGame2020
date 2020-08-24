@@ -30,6 +30,7 @@ public class MapManager : MonoBehaviourPunCallbacks
     public GameObject Player { get; set; }
 
     [SerializeField] CameraController m_playerCamera;
+    public CameraController PlayerCamera { get { return m_playerCamera; } }
 
     public enum FloorType
     {
@@ -106,7 +107,8 @@ public class MapManager : MonoBehaviourPunCallbacks
         PlayerMoveController pmc = Player.GetComponent<PlayerMoveController>();
         pmc.SetPos((int)StartPositionList[index].x, (int)StartPositionList[index].z);
 
-        m_playerCamera.enabled = true;
+        m_playerCamera.SetTarget(Player.transform);
+        PhaseManager.instance.EndLoad();
     }
 
     public FloorType GetFloorType(int x, int z)
