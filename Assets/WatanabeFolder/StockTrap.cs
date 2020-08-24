@@ -28,5 +28,15 @@ public class StockTrap : MonoBehaviour
         {
             Debug.Log("これ以上はいりません");
         }
-    } 
+    }
+
+    public int Times() 
+    {
+        return i;
+    }
+
+    public SelectTrapDate SelectTrapDate(int a) 
+    {
+        return selectTrapList[a];
+    }
 }
