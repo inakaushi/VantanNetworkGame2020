@@ -780,9 +780,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6cdd4f71e7b7f408a6cfda112e8278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  widthMoveCamera: 100
   offsetPos: {x: 0, y: 10, z: -10}
   angle: {x: 45, y: 0, z: 0}
   speed: 5
+  trapSetModeMoveSpeed: 20
 --- !u!1 &876701653
 GameObject:
   m_ObjectHideFlags: 0
