@@ -798,9 +798,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d6cdd4f71e7b7f408a6cfda112e8278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  widthMoveCamera: 10
   offsetPos: {x: 0, y: 10, z: -10}
   angle: {x: 45, y: 0, z: 0}
   speed: 5
+  trapSetModeMoveSpeed: 10
 --- !u!1 &1114816868
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +955,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
