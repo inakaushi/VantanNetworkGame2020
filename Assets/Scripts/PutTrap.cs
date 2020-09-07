@@ -67,7 +67,6 @@ public class PutTrap : MonoBehaviour
                         if (Position == null)
                         {
                             Position = hit.transform.position;
-
                             go = Instantiate(m_tempYesTrap, hit.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                         }
                     }
@@ -77,7 +76,6 @@ public class PutTrap : MonoBehaviour
                         if (Position == null)
                         {
                             Position = hit.transform.position;
-
                             go = Instantiate(m_tempNoTrap, hit.transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
                         }
                     }
@@ -93,6 +91,7 @@ public class PutTrap : MonoBehaviour
             return;
         }
 
+        MapManager.Instance.PlayerCamera.StartTrapSetMode();
         m_trap = Resources.Load(trap) as GameObject;
         m_tempYesTrap = Resources.Load(trap + "TempYes") as GameObject;
         m_tempNoTrap = Resources.Load(trap + "TempNo") as GameObject;
@@ -112,5 +111,6 @@ public class PutTrap : MonoBehaviour
     public void EndSetTrap()
 	{
         PhaseManager.instance.EndSetTrap();
+        MapManager.Instance.PlayerCamera.SetTarget(MapManager.Instance.Player.transform);
 	}
 }
