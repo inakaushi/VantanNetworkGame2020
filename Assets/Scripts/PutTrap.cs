@@ -17,6 +17,9 @@ public class PutTrap : MonoBehaviour
     //1フレーム前にポイントしていたタイルのポジション
     Vector3? Position = null;
 
+    //トラップ接地回数を数える変数
+    private int count = 0;
+
     Ray ray;
 
     void Update()
@@ -41,6 +44,12 @@ public class PutTrap : MonoBehaviour
                         //トラップ情報を初期化する
                         ClearTrap();
                         Position = null;
+
+                        ++count;
+                        if (count == 2)
+                        {
+                            EndSetTrap();
+                        }
                     }
                 }
             }

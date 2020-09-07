@@ -103,6 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5921771174790503279}
   - component: {fileID: 2435821133038117885}
+  - component: {fileID: -3756380676374924613}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Trap
@@ -145,6 +146,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3756380676374924613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461805277357011375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3d4e0e248423e44be94cbe41d6fa04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6604986370990260819
 PrefabInstance:
   m_ObjectHideFlags: 0
