@@ -33,6 +33,7 @@ public class Pitfall : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         trapActivation = true;
+
     }
 
     public bool NowPitState() 

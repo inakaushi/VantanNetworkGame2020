@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapBase : MonoBehaviour
+public class TrapBase
 {
     private bool trapState = false;
 

@@ -6,7 +6,7 @@ public class Cannon : MonoBehaviour
 {
     [SerializeField] GameObject point;
     [SerializeField] GameObject bullet;
-    [SerializeField] float firindSpan;
+    [SerializeField] float firindSpan = 0;
     float firingtime = 0;
 
     private void Update()
