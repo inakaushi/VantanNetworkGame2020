@@ -34,7 +34,7 @@ public class PlayerMoveController : MonoBehaviourPunCallbacks
             return;
         }
 
-		if (PhaseManager.instance.GetPhase() != PhaseManager.PHASE.PLAYER_MOVE)
+		if (PhaseManager.instance.GetPhase() != PhaseManager.PHASE.PLAYER_MOVE && PhaseManager.instance.GetPhase() != PhaseManager.PHASE.LOBBY)
 		{
             return;
 		}

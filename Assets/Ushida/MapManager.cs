@@ -108,7 +108,15 @@ public class MapManager : MonoBehaviourPunCallbacks
         pmc.SetPos((int)StartPositionList[index].x, (int)StartPositionList[index].z);
 
         m_playerCamera.SetTarget(Player.transform);
-        PhaseManager.instance.EndLoad();
+
+        if (NetworkGameManager.Instance.Scene == NetworkGameManager.GameScene.Lobby)
+        {
+            PhaseManager.instance.LobbyStart();
+        }
+        else if (NetworkGameManager.Instance.Scene == NetworkGameManager.GameScene.Game)
+        {
+            PhaseManager.instance.EndLoad();
+        }
     }
 
     public FloorType GetFloorType(int x, int z)

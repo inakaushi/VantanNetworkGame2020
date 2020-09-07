@@ -31,6 +31,7 @@ public class PhaseManager : MonoBehaviour
 	public enum PHASE
 	{
         LOAD,
+		LOBBY,
         SET_TRAP,
         PLAYER_MOVE,
 	}
@@ -73,4 +74,9 @@ public class PhaseManager : MonoBehaviour
 	{
 		phase = PHASE.PLAYER_MOVE;
 	}
+
+	public void LobbyStart()
+    {
+		phase = PHASE.LOBBY;
+    }
 }

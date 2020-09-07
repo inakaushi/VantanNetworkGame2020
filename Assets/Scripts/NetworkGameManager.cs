@@ -32,6 +32,16 @@ public class NetworkGameManager : MonoBehaviourPunCallbacks
     }
     //------------------------------------------------------------------
 
+    //現在のシーンを表すenum
+    public enum GameScene
+    {
+        Title,
+        Lobby,
+        Game,
+    }
+
+    public GameScene Scene { get; set; } = GameScene.Lobby;
+
     //部屋に入室したかどうか
     public bool JoinedRoom { get; set; } = false;
     private void Awake()
@@ -164,6 +174,7 @@ public class NetworkGameManager : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
+            Scene = GameScene.Game;
             SceneManager.LoadSceneAsync("GameScene", LoadSceneMode.Single);
         }
     }
