@@ -34,6 +34,11 @@ public class PlayerMoveController : MonoBehaviourPunCallbacks
             return;
         }
 
+		if (PhaseManager.instance.GetPhase() != PhaseManager.PHASE.PLAYER_MOVE)
+		{
+            return;
+		}
+
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
