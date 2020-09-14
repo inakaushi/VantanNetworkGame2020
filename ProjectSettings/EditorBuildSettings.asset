@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/WatanabeFolder/WatanabeTestScene.unity
-    guid: e4997236934b43e4991495cf60d1978e
+    path: Assets/Scenes/TitleScene.unity
+    guid: 9643c5b54cb1f9f4b962c83e8f45afec
   - enabled: 1
-    path: Assets/WatanabeFolder/Test2.unity
-    guid: 123c458fd80555b4c97474f8601dac4f
+    path: Assets/Scenes/LobbyScene.unity
+    guid: f378e20dae85ebc4f8b0c888cd1df46d
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 24dd72bcb03527b47b65a119219f3ef1
   m_configObjects: {}
