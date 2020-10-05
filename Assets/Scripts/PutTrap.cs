@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+// Photon 用の名前空間を参照する
+using ExitGames.Client.Photon;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class PutTrap : MonoBehaviour
+public class PutTrap : MonoBehaviourPunCallbacks
 {
     [SerializeField] Text m_trapText;
 
@@ -37,9 +41,9 @@ public class PutTrap : MonoBehaviour
                         //仮配置の罠を削除
                         Destroy(go);
 
-                        Destroy(hit.collider.gameObject);
+                        PhotonNetwork.Destroy(hit.collider.gameObject);
 
-                        Instantiate(m_trap, hit.transform.position, Quaternion.identity);
+                        PhotonNetwork.Instantiate(m_trap.name, hit.transform.position, Quaternion.identity);
 
                         //トラップ情報を初期化する
                         ClearTrap();
