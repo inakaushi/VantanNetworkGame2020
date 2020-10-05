@@ -6,6 +6,7 @@ public class CannonBullet : MonoBehaviour
 {
     Rigidbody b_rigidy;
     [SerializeField] float b_speed;
+    private Vector3 vector3;
 
     void Start()
     {
@@ -14,6 +15,11 @@ public class CannonBullet : MonoBehaviour
 
     void Update()
     {
-        b_rigidy.velocity = transform.forward * b_speed;
+        b_rigidy.velocity = vector3 * b_speed;
+    }
+
+    public void SetVec(Vector3 vector) 
+    {
+        vector3 = vector;
     }
 }

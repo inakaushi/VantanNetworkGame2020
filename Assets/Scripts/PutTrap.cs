@@ -28,40 +28,27 @@ public class PutTrap : MonoBehaviour
 
     void Update()
     {
-        //追加
+        //砲台の方向指定関係
         if (directionSelection)
         {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
             if (Input.GetMouseButtonDown(0))
             {
-                if (Physics.Raycast(ray, out RaycastHit hit))
-                {
-                    if (hit.collider.tag == "direction")
-                    {
-                        selectTransform = selectionTrap.transform;
-                        Destroy(selectionTrap);
-                        if (hit.collider.name == "UP")
-                        {
-                            Instantiate(m_trap, selectTransform.position, Quaternion.Euler(Vector3.forward));
-                        }
-                        else if (hit.collider.name == "DOWN")
-                        {
-                            Instantiate(m_trap, selectTransform.position, Quaternion.Euler(Vector3.back));
-                        }
-                        else if (hit.collider.name == "RIGHT")
-                        {
-                            Instantiate(m_trap, selectTransform.position, Quaternion.Euler(Vector3.right));
-                        }
-                        else if (hit.collider.name == "LEFT")
-                        {
-                            Instantiate(m_trap, selectTransform.position, Quaternion.Euler(Vector3.left));
-                        }
+                selectionTrap.transform.Rotate(0, 90, 0);
+            }
 
-                        //トラップ情報を初期化する
-                        ClearTrap();
-                        Position = null;
-                    }
+            if (Input.GetMouseButtonDown(1))
+            {
+                Instantiate(m_trap, selectionTrap.transform.position, selectionTrap.transform.rotation);
+                Destroy(selectionTrap);
+                selectionTrap = null;
+                directionSelection = false;
+                //トラップ情報を初期化する
+                ClearTrap();
+                Position = null;
+                ++count;
+                if (count == 2)
+                {
+                    EndSetTrap();
                 }
             }
         }
@@ -93,13 +80,11 @@ public class PutTrap : MonoBehaviour
                             //トラップ情報を初期化する
                             ClearTrap();
                             Position = null;
-                        }
-                        
-                        
-                        ++count;
-                        if (count == 2)
-                        {
-                            EndSetTrap();
+                            ++count;
+                            if (count == 2)
+                            {
+                                EndSetTrap();
+                            }
                         }
                     }
                 }
