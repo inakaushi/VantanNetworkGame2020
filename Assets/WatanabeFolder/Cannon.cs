@@ -14,7 +14,8 @@ public class Cannon : MonoBehaviour
         firingtime += Time.deltaTime;
         if (firingtime >= firindSpan)
         {
-            Instantiate(bullet, point.transform.position, Quaternion.identity);
+            GameObject gameObject= Instantiate(bullet, point.transform.position, Quaternion.identity);
+            gameObject.GetComponent<CannonBullet>().SetVec(this.transform.forward);
             firingtime = 0;
         }
     }

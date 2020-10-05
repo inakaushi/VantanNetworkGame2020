@@ -5,6 +5,7 @@ using UnityEngine;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class MapManager : MonoBehaviourPunCallbacks
 {
@@ -111,6 +112,11 @@ public class MapManager : MonoBehaviourPunCallbacks
 
         if (NetworkGameManager.Instance.Scene == NetworkGameManager.GameScene.Lobby)
         {
+            if (SceneManager.GetActiveScene().buildIndex == (int)NetworkGameManager.GameScene.Game)
+            {
+                PhaseManager.instance.EndLoad();
+                return;
+            }
             PhaseManager.instance.LobbyStart();
         }
         else if (NetworkGameManager.Instance.Scene == NetworkGameManager.GameScene.Game)

@@ -19,12 +19,41 @@ public class PutTrap : MonoBehaviour
 
     //トラップ接地回数を数える変数
     private int count = 0;
-
+    //トラップの方向選択状態か否かの変数
+    private bool directionSelection = false;
+    GameObject directionTrap;
+    GameObject selectionTrap;
+    Transform selectTransform;
     Ray ray;
 
     void Update()
     {
-        if (m_trap)
+        //砲台の方向指定関係
+        if (directionSelection)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                selectionTrap.transform.Rotate(0, 90, 0);
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                Instantiate(m_trap, selectionTrap.transform.position, selectionTrap.transform.rotation);
+                Destroy(selectionTrap);
+                selectionTrap = null;
+                directionSelection = false;
+                //トラップ情報を初期化する
+                ClearTrap();
+                Position = null;
+                ++count;
+                if (count == 2)
+                {
+                    EndSetTrap();
+                }
+            }
+        }
+
+        if (m_trap && !directionSelection)
         {
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -39,16 +68,23 @@ public class PutTrap : MonoBehaviour
 
                         Destroy(hit.collider.gameObject);
 
-                        Instantiate(m_trap, hit.transform.position, Quaternion.identity);
-
-                        //トラップ情報を初期化する
-                        ClearTrap();
-                        Position = null;
-
-                        ++count;
-                        if (count == 2)
+                        if (m_trap.name == "Cannon")
                         {
-                            EndSetTrap();
+                            //追加
+                            directionSelection = true;
+                            selectionTrap = Instantiate(directionTrap, hit.transform.position, Quaternion.identity);
+                        }
+                        else
+                        {
+                            Instantiate(m_trap, hit.transform.position, Quaternion.identity);
+                            //トラップ情報を初期化する
+                            ClearTrap();
+                            Position = null;
+                            ++count;
+                            if (count == 2)
+                            {
+                                EndSetTrap();
+                            }
                         }
                     }
                 }
@@ -104,6 +140,11 @@ public class PutTrap : MonoBehaviour
         m_trap = Resources.Load(trap) as GameObject;
         m_tempYesTrap = Resources.Load(trap + "TempYes") as GameObject;
         m_tempNoTrap = Resources.Load(trap + "TempNo") as GameObject;
+        //追加
+        if (m_trap.name == "Cannon")
+        {
+            directionTrap = Resources.Load(trap + "Select") as GameObject;
+        }
 
         m_trapText.text = "Trap : " + m_trap.name;
     }
