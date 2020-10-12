@@ -17,6 +17,8 @@ public class PutTrap : MonoBehaviour
     //1フレーム前にポイントしていたタイルのポジション
     Vector3? Position = null;
 
+    [SerializeField] private Button endButton;
+
     //トラップ接地回数を数える変数
     private int count = 0;
     //トラップの方向選択状態か否かの変数
@@ -43,13 +45,8 @@ public class PutTrap : MonoBehaviour
                 selectionTrap = null;
                 directionSelection = false;
                 //トラップ情報を初期化する
-                ClearTrap();
-                Position = null;
-                ++count;
-                if (count == 2)
-                {
-                    EndSetTrap();
-                }
+                InitializationOfTrapInformation();
+                endButton.interactable = true;
             }
         }
 
@@ -78,13 +75,8 @@ public class PutTrap : MonoBehaviour
                         {
                             Instantiate(m_trap, hit.transform.position, Quaternion.identity);
                             //トラップ情報を初期化する
-                            ClearTrap();
-                            Position = null;
-                            ++count;
-                            if (count == 2)
-                            {
-                                EndSetTrap();
-                            }
+                            InitializationOfTrapInformation();
+                            endButton.interactable = true;
                         }
                     }
                 }
@@ -147,6 +139,7 @@ public class PutTrap : MonoBehaviour
         }
 
         m_trapText.text = "Trap : " + m_trap.name;
+        endButton.interactable = false;
     }
 
     void ClearTrap()
@@ -163,4 +156,16 @@ public class PutTrap : MonoBehaviour
         PhaseManager.instance.EndSetTrap();
         MapManager.Instance.PlayerCamera.SetTarget(MapManager.Instance.Player.transform);
 	}
+
+    public void InitializationOfTrapInformation() 
+    {
+        //トラップ情報を初期化する
+        ClearTrap();
+        Position = null;
+        ++count;
+        if (count == 2)
+        {
+            EndSetTrap();
+        }
+    }
 }
